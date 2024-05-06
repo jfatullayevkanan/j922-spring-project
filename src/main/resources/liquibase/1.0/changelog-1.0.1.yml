@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add new column to lessons table
+      author: Kanan Fatullayev
+      changes:
+        - addColumn:
+            tableName: lessons
+            columns:
+              - column:
+                  name: description
+                  type: varchar(64)
+                  remarks: description of lesson
+                  constraints:
+                    nullable: true

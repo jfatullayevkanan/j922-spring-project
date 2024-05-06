@@ -1,0 +1,25 @@
+server:
+  port: 8082
+
+
+logging:
+  level:
+    root: INFO
+    com.example.j922springproject: DEBUG
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test_db?currentSchema=j922
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  liquibase:
+    default-schema: j922
+    change-log: liquibase/changelog-master.yml
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER

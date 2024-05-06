@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create users table
+      author: Kanan Fatullayev
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: id of user
+              - column:
+                  name: full_name
+                  type: varchar(128)
+                  remarks: full name of user
+              - column:
+                  name: username
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+                  remarks: username of user
+              - column:
+                  name: password
+                  type: text
+                  constraints:
+                    nullable: false
+                  remarks: password of user
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: When the record created
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: When the record updated
+
+            remarks: Table to store information about users
